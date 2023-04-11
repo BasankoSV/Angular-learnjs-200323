@@ -27,7 +27,7 @@ export class ProductsListComponent implements OnInit {
 
 		setTimeout(() => {
 			this.products = productsMock;
-		}, 3000);
+		}, 0);
 		// setTimeout(() => {
 		// 	this.products = undefined;
 		// }, 5000);

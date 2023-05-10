@@ -1,0 +1,39 @@
+<mat-toolbar [color]="applicationConfig?.headerColorPalete">
+	<button
+		mat-icon-button
+		aria-label="Example icon-button with menu icon"
+		test-id="header-button-menu"
+		class="example-icon"
+		(click)="menuClick.emit()"
+	>
+		<mat-icon>menu</mat-icon>
+	</button>
+	<div routerLink="/products-list" class="logo">
+		<img class="logo__icon" [src]="applicationConfig?.shopIconSrc" />
+		<span>{{ applicationConfig?.title }}</span>
+	</div>
+	<span class="example-spacer"></span>
+	<button
+		mat-icon-button
+		aria-label="Example icon-button with heart icon"
+		class="example-icon favorite-icon"
+		(click)="openPopup(favoritePopupTempalte)"
+	>
+		<mat-icon>favorite</mat-icon>
+	</button>
+	<button
+		mat-icon-button
+		aria-label="Example icon-button with share icon"
+		class="example-icon"
+	>
+		<mat-icon>share</mat-icon>
+	</button>
+</mat-toolbar>
+
+<ng-template #favoritePopupTempalte let-title>
+	<div class="favorite-popup">
+		{{ title }}
+		<h1>No, you are favorite</h1>
+		<button (click)="closePopup()">I know</button>
+	</div>
+</ng-template>

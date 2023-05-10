@@ -1,0 +1,34 @@
+<mat-card class="card">
+	<mat-card-header>
+		<mat-card-title>{{ product.name }}</mat-card-title>
+		<mat-card-subtitle>
+			{{ product.price | currency : 'USD' : 'symbol-narrow' : '1.0-0' }}
+		</mat-card-subtitle>
+	</mat-card-header>
+	<div
+		*appCarousel="let img of product?.images; let next = next; let back = back"
+		class="galerey"
+	>
+		<button mat-icon-button (click)="back(); $event.stopPropagation()">
+			<mat-icon>chevron_left</mat-icon>
+		</button>
+		<img mat-card-image alt="Product photo" [src]="img.url" />
+		<button mat-icon-button (click)="next(); $event.stopPropagation()">
+			<mat-icon>chevron_right</mat-icon>
+		</button>
+	</div>
+	<mat-card-content>
+		<p>Отзывы: {{ product.feedbacksCount }}</p>
+		<div class="raiting">
+			Рейтинг:
+			<mat-icon [class.star-active]="isStarActive(1)">star</mat-icon>
+			<mat-icon [class.star-active]="isStarActive(2)">star</mat-icon>
+			<mat-icon [class.star-active]="isStarActive(3)">star</mat-icon>
+			<mat-icon [class.star-active]="isStarActive(4)">star</mat-icon>
+			<mat-icon [class.star-active]="isStarActive(5)">star</mat-icon>
+		</div>
+	</mat-card-content>
+	<mat-card-actions class="mat-card-actions-align-end">
+		<button mat-button (click)="onProductBuy($event)">Buy</button>
+	</mat-card-actions>
+</mat-card>

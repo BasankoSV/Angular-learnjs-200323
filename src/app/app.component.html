@@ -1,1 +1,9 @@
-<h1>Angular Course Javascript.ru</h1>
+<app-header
+	[applicationConfig]="applicationConfig"
+	(menuClick)="sidenavComponent.toggleSidenavOpened()"
+></app-header>
+<app-sidenav #sidenavComponent>
+	<router-outlet></router-outlet>
+</app-sidenav>
+
+<app-popup-host></app-popup-host>

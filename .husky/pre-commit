@@ -1,9 +1,15 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+<<<<<<< HEAD
 #npm run prettier:fix:all
 #git add .
 
 npx lint-staged
 
 #npm run lint
+=======
+# npm run prettier:fix:all
+# git add .
+npx lint-staged
+>>>>>>> 211a4d0c4b00a20b899939720971be7d82a4c51b

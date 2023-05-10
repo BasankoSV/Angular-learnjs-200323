@@ -1,10 +1,12 @@
-import { Component } from "@angular/core"
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {applicationConfigMock} from './shared/application-config/application-config.mock';
 
 @Component({
-	selector: "app-root",
-	templateUrl: "./app.component.html",
-	styleUrls: ["./app.component.css"],
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.css'],
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-	title = "Angular-learnjs-200323"
+	readonly applicationConfig = applicationConfigMock;
 }
